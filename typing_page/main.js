@@ -164,6 +164,6 @@ dataSet.return_Element.addEventListener("click", () => {
   dataSet.container_Element.appendChild(quit_Element);
   dataSet.quit_Element = quit_Element;
   dataSet.quit_Element.addEventListener("click", () => {
-    location.href = "https://app.netlify.com/sites/ziheng-site/overview";
+    location.href = "https://ziheng-site.netlify.app/";
   });
 });
