@@ -1,0 +1,192 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 600px;
+  height: 600px;
+  background: #000000;
+  margin: 40px;
+
+  & div.quit {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 20px;
+    right: 20px;
+    font-size: 3.5em;
+    color: #fff;
+
+    & div.top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(235deg, #00a2ff, #dcdcdc, #ff3503);
+      transform: translateY(20px) rotate(135deg);
+    }
+
+    & div.bottom {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(235deg, #00a2ff, #dcdcdc, #ff3503);
+      transform: translateY(-25px) rotate(45deg);
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: #fff;
+    z-index: -1;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: #fff;
+    z-index: -1;
+    filter: blur(30px);
+  }
+
+  &:nth-child(1)::before {
+    animation-name: animation;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    background: linear-gradient(235deg, #00a2ff, #010513, #ff3503);
+  }
+  &:nth-child(1)::after {
+    animation-name: animation;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: linear;
+    background: linear-gradient(235deg, #00a2ff, #010513, #ff3503);
+  }
+  @keyframes animation {
+    form {
+      background: linear-gradient(235deg, #00a2ff, #010513, #ff03ea);
+    }
+    to {
+      background: linear-gradient(235deg, #04ff00, #010513, #ff03ea);
+    }
+  }
+  & .effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    display: block;
+    background: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+  }
+  & .text {
+    color: #fff;
+    padding: 20px;
+
+    & h1 {
+      margin: 5px;
+    }
+
+    & ul {
+      padding: 0;
+      margin: 0;
+      overflow-y: scroll;
+      width: 100%;
+      color: red;
+      font-size: 1.5em;
+      & li {
+        font-size: 1.2em;
+        border-bottom: 1px solid rgb(164, 164, 164);
+      }
+    }
+
+    & .question {
+      padding: 20px;
+    }
+  }
+  & .bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 45px;
+    font-size: 1.5em;
+    & .return a {
+      color: #fff;
+    }
+    & .skip a {
+      color: #fff;
+    }
+  }
+}
+
+.text.size {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.question span {
+  display: inline-block;
+  padding: 4px;
+  margin: 0 2px;
+  transition: all 0.05s linear;
+  font-size: 2.5em;
+}
+.question span:last-child {
+  border: solid 1.5px rgb(255, 255, 255);
+}
+.question span:nth-child(3) {
+  border: solid 1.5px rgb(255, 255, 255);
+}
+
+.question span.correct {
+  color: greenyellow;
+  font-size: 3.5em;
+}
+
+.question span.incorrect {
+  color: red;
+  font-size: 1.5em;
+}
+
+.input {
+  padding: 0 10px;
+  font-size: 1.5em;
+}

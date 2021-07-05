@@ -1,0 +1,255 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-width: 600px;
+  height: 600px;
+  background: #000000;
+  margin: 40px;
+}
+
+.container div.quit {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 20px;
+  right: 20px;
+  font-size: 3.5em;
+  color: #fff;
+}
+
+.container div.quit div.top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(235deg, #00a2ff, #dcdcdc, #ff3503);
+  -webkit-transform: translateY(20px) rotate(135deg);
+          transform: translateY(20px) rotate(135deg);
+}
+
+.container div.quit div.bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(235deg, #00a2ff, #dcdcdc, #ff3503);
+  -webkit-transform: translateY(-25px) rotate(45deg);
+          transform: translateY(-25px) rotate(45deg);
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #fff;
+  z-index: -1;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #fff;
+  z-index: -1;
+  -webkit-filter: blur(30px);
+          filter: blur(30px);
+}
+
+.container:nth-child(1)::before {
+  -webkit-animation-name: animation;
+          animation-name: animation;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  background: linear-gradient(235deg, #00a2ff, #010513, #ff3503);
+}
+
+.container:nth-child(1)::after {
+  -webkit-animation-name: animation;
+          animation-name: animation;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: linear;
+          animation-iteration-count: linear;
+  background: linear-gradient(235deg, #00a2ff, #010513, #ff3503);
+}
+
+@-webkit-keyframes animation {
+  form {
+    background: linear-gradient(235deg, #00a2ff, #010513, #ff03ea);
+  }
+  to {
+    background: linear-gradient(235deg, #04ff00, #010513, #ff03ea);
+  }
+}
+
+@keyframes animation {
+  form {
+    background: linear-gradient(235deg, #00a2ff, #010513, #ff03ea);
+  }
+  to {
+    background: linear-gradient(235deg, #04ff00, #010513, #ff03ea);
+  }
+}
+
+.container .effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  display: block;
+  background: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.container .text {
+  color: #fff;
+  padding: 20px;
+}
+
+.container .text h1 {
+  margin: 5px;
+}
+
+.container .text ul {
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll;
+  width: 100%;
+  color: red;
+  font-size: 1.5em;
+}
+
+.container .text ul li {
+  font-size: 1.2em;
+  border-bottom: 1px solid #a4a4a4;
+}
+
+.container .text .question {
+  padding: 20px;
+}
+
+.container .bottom {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 45px;
+  font-size: 1.5em;
+}
+
+.container .bottom .return a {
+  color: #fff;
+}
+
+.container .bottom .skip a {
+  color: #fff;
+}
+
+.text.size {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.question span {
+  display: inline-block;
+  padding: 4px;
+  margin: 0 2px;
+  -webkit-transition: all 0.05s linear;
+  transition: all 0.05s linear;
+  font-size: 2.5em;
+}
+
+.question span:last-child {
+  border: solid 1.5px white;
+}
+
+.question span:nth-child(3) {
+  border: solid 1.5px white;
+}
+
+.question span.correct {
+  color: greenyellow;
+  font-size: 3.5em;
+}
+
+.question span.incorrect {
+  color: red;
+  font-size: 1.5em;
+}
+
+.input {
+  padding: 0 10px;
+  font-size: 1.5em;
+}
+/*# sourceMappingURL=style.css.map */

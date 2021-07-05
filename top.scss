@@ -1,0 +1,344 @@
+//sectionタグのvar
+$section_color: black;
+
+//初期化
+* {
+  //li a => defaultの初期化
+  text-decoration: none;
+  list-style: none;
+
+  //margin,padding => 初期化
+  margin: 0;
+  padding: 0;
+
+  //border-box
+  box-sizing: border-box;
+
+  //font
+  font-family: "Times New Roman", Times, serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+section {
+  //position
+  position: relative;
+  z-index: 10;
+
+  //width,height
+  width: 100%;
+  min-height: 100vh;
+
+  //padding,margin
+  padding: 100px;
+
+  //display
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  //color
+  background-color: rgba(0, 0, 0, 0.849);
+
+  //section => div.circle:nth-child(1)
+  & .circle:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2664e9;
+    clip-path: circle(50% at right -20%);
+  }
+  & .circle:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #dd1a1a;
+    clip-path: circle(50% at left 120%);
+  }
+
+  //section => div.header
+  & header {
+    //position
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    //width,height
+    width: 100%;
+
+    //padding,margin
+    padding: 20px 100px;
+
+    //display
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    //section => header => a
+    & > a {
+      //font
+      font-weight: bold;
+      font-size: 1.5em;
+
+      //color
+      color: transparent;
+      -webkit-text-stroke: 0.15vw rgb(255, 255, 255);
+
+      //cursor
+      cursor: no-drop;
+    }
+
+    //section => header => ul
+    & ul {
+      //position
+      position: relative;
+
+      //display
+      display: flex;
+
+      //section => div.header => ul => li
+      & li {
+        //section => div.header => ul => li => a
+        & a {
+          //font
+          font-weight: bold;
+          font-size: 1.2em;
+
+          //margin
+          padding: 10px 0 10px 0;
+          margin-left: 40px;
+
+          //color
+          color: white;
+
+          //display
+          display: inline-block;
+
+          //transition
+          transition: all 0.3s ease-in-out;
+
+          //position
+          position: relative;
+
+          //section => div.header => ul => li => a:hover
+          &:hover {
+            color: rgb(251, 255, 0);
+          }
+        }
+      }
+    }
+  }
+  //section => main
+  & main {
+    //position
+    position: relative;
+
+    //width
+    width: 100%;
+
+    //display
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    //section => main => div.content
+    & .content {
+      //width
+      max-width: 600px;
+      //position
+      position: relative;
+      //section => main => div.content => h1
+      & h1 {
+        //font
+        font-weight: 900;
+        font-size: 5em;
+        line-height: 2em;
+        color: rgb(255, 255, 255);
+        //section => main => div.content => h1 => span
+        & > span {
+          color: transparent;
+          -webkit-text-stroke: 0.3vw rgb(255, 255, 255);
+        }
+      }
+      //section => main => div.content => a
+      & a {
+        //position
+        position: relative;
+
+        //margin,padding
+        padding: 10px 20px 10px 20px;
+        margin-top: 20px;
+
+        //color
+        color: rgb(255, 255, 255);
+
+        //font
+        font-size: 2em;
+        letter-spacing: 1px;
+        font-weight: bold;
+
+        //border
+        // border-right: 1px solid white;
+
+        //cursor
+        cursor: pointer;
+
+        //display
+        display: inline-block;
+
+        //transition
+        transition: all 0.5s ease-in-out;
+
+        //section => main => div.content => a:hover
+        &:hover {
+          color: rgb(251, 255, 0);
+        }
+
+        //section => main => div.content => a => span
+        & span {
+          //position
+          position: absolute;
+
+          //display
+          display: block;
+
+          //color
+          background-color: rgb(255, 255, 255);
+
+          //section => main => div.content => a => span:nth-child(1)
+          &:nth-child(1) {
+            //position
+            left: 0;
+            bottom: 0;
+
+            //width,height
+            width: 1px;
+            height: 100%;
+
+            //transform
+            transform: scaleY(0);
+            transform-origin: top;
+
+            //transition
+            transition: all 0.5s ease-in-out;
+          }
+          &:nth-child(2) {
+            //position
+            left: 0;
+            bottom: 0;
+
+            //width,height
+            width: 100%;
+            height: 1px;
+
+            //transform
+            transform: scaleX(0);
+            transform-origin: right;
+
+            //transition
+            transition: all 0.5s ease-in-out;
+          }
+        }
+        //section => main => div.content => a:hover => span:nth-child(1)
+        &:hover span:nth-child(1) {
+          //transform
+          transform: scaleY(1);
+          transform-origin: bottom;
+
+          //transition
+          transition: all 0.5s ease-in-out;
+        }
+        &:hover span:nth-child(2) {
+          //transform
+          transform: scaleX(1);
+          transform-origin: left;
+
+          //transition
+          transition: all 0.5s ease-in-out;
+        }
+      }
+    }
+  }
+  //section => div.blend
+  & .blend {
+    //position
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    //width,height
+    width: 100%;
+    height: 100%;
+
+    //color
+    background-color: rgb(61, 61, 61);
+    mix-blend-mode: difference;
+  }
+  //JS
+  //section => span
+  & > span {
+    //border
+    border-radius: 50%;
+    //position
+    position: absolute;
+    z-index: -1;
+    //animation
+    animation-name: box_animation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    //none
+    pointer-events: none;
+  }
+  //JS
+  //section => span#crile-box
+  & > span#box {
+    //animation
+    animation-name: box_animation02;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes box_animation {
+  from {
+    transform: translateY(0) scale(0);
+  }
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(300%) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes box_animation02 {
+  from {
+    transform: translateY(0) scale(0) rotate(0deg);
+  }
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(300%) scale(1.2) rotate(360deg);
+    opacity: 0;
+  }
+}
