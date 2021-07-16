@@ -1,3 +1,4 @@
+//完成
 //タイピング問題の初期化クラス
 class DataSet {
   constructor() {
