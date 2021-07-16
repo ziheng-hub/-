@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>単語テストアプリ</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="clone-body"></section>
+    <!-- クイズ説明部分 -->
+    <div class="startButton"><button>アプリ起動</button></div>
+    <div class="descriptionBox">
+      <div class="title">
+        <span>アプリの使い方</span>
+      </div>
+      <div class="list">
+        <div class="info">1.単語テストを行うアプリである.</div>
+        <div class="info">2.正しい選択肢をクリックしよう.</div>
+        <div class="info">3.正しい選択肢を選べば緑色になる.</div>
+        <div class="info">4.正しくない選択肢を選べば赤色になる.</div>
+      </div>
+      <div class="buttons">
+        <button class="return">戻る</button>
+        <button class="restartBtn">次に進む</button>
+      </div>
+    </div>
+    <!-- クイズ部分出題部分 -->
+    <div class="quizBox">
+      <header>
+        <div class="title">次の単語の意味を選べ</div>
+      </header>
+      <section>
+        <div class="quiz">
+          <span>config</span>
+        </div>
+        <!-- クイズ選択肢追加部分 javascriptで操作 -->
+        <div class="listOption"></div>
+      </section>
+      <footer>
+        <button class="nextQuizBtn">次の問題へ</button>
+      </footer>
+    </div>
+    <!-- クイズ結果部分 -->
+    <div class="scoreBox">
+      <div class="complete_text">最終スコア</div>
+      <!-- クイズ結果部分 スコアを出力する javascriptで操作 -->
+      <div class="score_text"></div>
+      <div class="buttons">
+        <button class="restartBtn">もう一度やる</button>
+        <button class="topBtn">終了する</button>
+      </div>
+    </div>
+    <script src="data.js"></script>
+    <script src="function.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

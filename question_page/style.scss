@@ -1,0 +1,386 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+//背景画像
+.clone-body {
+  background: linear-gradient(
+    -30deg,
+    rgb(232, 232, 232) 0%,
+    rgb(26, 26, 26) 50%,
+    rgb(255, 0, 0) 50%,
+    rgb(173, 3, 3) 100%
+  );
+  height: 100vh;
+  animation-name: huerotate;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+//スタートボタンの位置を中央揃えする.
+.startButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  //ボタンに擬似要素を加えて、translateでアニメーションを行う部分.
+  & button {
+    position: relative;
+    z-index: 1;
+    font-weight: 700;
+    font-size: 25px;
+    background-color: white;
+    color: black;
+    box-shadow: 0 5px 35px rgb(44, 44, 44);
+    border: solid 1px black;
+    padding: 20px 40px;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    transition: all 0.1s ease-in-out;
+
+    //以下がそのアニメーションしたい擬似要素である.
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      transform: translate(-100%);
+      transition: all 0.5s ease-in-out;
+    }
+  }
+
+  //ボタンがホバーされた時にボタンの文字色に変化を加える.
+  & button:hover {
+    color: greenyellow;
+  }
+
+  //ボタンがホバーされた時に擬似要素を平行移動して、初期位置に戻す.
+  & button:hover::after {
+    transform: translate(0);
+  }
+}
+
+//同じく説明部分も中央揃えにする.
+.descriptionBox {
+  opacity: 0;
+  pointer-events: none;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 540px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 5px 35px rgb(255, 255, 255);
+
+  //説明のタイトルは、フレックボックスで上下方向を真ん中に合わせる.
+  & .title {
+    height: 60px;
+    width: 100%;
+    padding: 0 35px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  //説明のリストには、上下左右の余白を入れる.
+  & .list {
+    padding: 15px 35px;
+    //各説明リストのここの要素には、上に外側の余白を入れる.
+    & .info {
+      margin-top: 5px;
+      font-size: 16px;
+    }
+  }
+  //戻るボタンと進むボタンをflexで左右中央揃えする.
+  & .buttons {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    //--1 各ボタンにはアニメーションを加える.
+    & button {
+      margin: 0 20px;
+      height: 40px;
+      width: 100px;
+      background: linear-gradient(
+        -30deg,
+        rgb(255, 0, 0) 0%,
+        rgb(173, 3, 3) 50%,
+        black 50%,
+        gray 100%
+      );
+      filter: hue-rotate(0deg);
+      animation-name: huerotate;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease;
+      cursor: pointer;
+      font-weight: 700;
+      border-radius: 5px;
+      border: none;
+      color: white;
+      outline: none;
+    }
+  }
+}
+
+//--1 各ボタンの色を回転する機能のアニメーション
+@keyframes huerotate {
+  0% {
+    filter: hue-rotate(0);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+//クイズ部分も中央揃えする.
+.quizBox {
+  opacity: 0;
+  pointer-events: none;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 550px;
+  background: linear-gradient(
+    -30deg,
+    rgb(255, 0, 162) 0%,
+    rgb(147, 2, 106) 50%,
+    black 50%,
+    gray 100%
+  );
+
+  box-shadow: 0 5px 35px rgb(44, 44, 44);
+  //クイズ部分のタイトルのスタイル.
+  & header {
+    height: 70px;
+    padding: 0 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 1px solid gainsboro;
+    font-weight: 600;
+  }
+  //選択肢部分のスタイル.
+  & section {
+    padding: 25px 30px;
+    color: white;
+    font-weight: bold;
+
+    //選択肢の問題の文字の大きさ調整.
+    & .quiz {
+      color: red;
+      font-size: 35px;
+    }
+
+    & .listOption {
+      padding: 20px 0;
+
+      //選択肢にスタイルを加える.
+      & .option {
+        padding: 10px 0;
+        margin-bottom: 20px;
+        border: 1px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        //最後の選択肢の外側の余白は不要.
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        //選択肢がホバーされた時、影を付加する.
+        &:hover {
+          box-shadow: 0 0px 40px rgb(255, 255, 255);
+        }
+      }
+    }
+  }
+  //次の問題のボタンと親要素footer部分
+  & footer {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & .nextQuizBtn {
+      display: none;
+      background-color: transparent;
+      color: white;
+      padding: 10px 20px;
+      cursor: pointer;
+      outline: none;
+      border: solid 1px white;
+      font-weight: 600;
+      border-radius: 5px;
+      font-size: 15px;
+
+      &:hover {
+        box-shadow: 0 0px 30px rgb(255, 255, 255);
+      }
+    }
+  }
+}
+//スコア部分も中央揃え
+.scoreBox {
+  opacity: 0;
+  pointer-events: none;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  height: 550px;
+  padding: 30px 30px;
+  background: linear-gradient(
+    -30deg,
+    rgb(255, 0, 0) 0%,
+    rgb(173, 3, 3) 50%,
+    black 50%,
+    gray 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  //スコア部分最終スコア文字部分
+  & .complete_text {
+    font-weight: 600;
+    font-size: 35px;
+  }
+  //最終スコアの点数部分
+  & .score_text {
+    font-size: 25px;
+  }
+  & .buttons {
+    & .restartBtn {
+      margin-right: 20px;
+      padding: 20px 40px;
+      background: linear-gradient(
+        -30deg,
+        rgb(255, 0, 0) 0%,
+        rgb(173, 3, 3) 50%,
+        black 50%,
+        gray 100%
+      );
+      filter: hue-rotate(0deg);
+      animation-name: huerotate;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease;
+      cursor: pointer;
+      font-weight: 700;
+      border-radius: 5px;
+      border: none;
+      color: white;
+      outline: none;
+    }
+    & .topBtn {
+      padding: 20px 40px;
+      background: linear-gradient(
+        -30deg,
+        rgb(255, 0, 0) 0%,
+        rgb(173, 3, 3) 50%,
+        black 50%,
+        gray 100%
+      );
+      filter: hue-rotate(0deg);
+      animation-name: huerotate;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease;
+      cursor: pointer;
+      font-weight: 700;
+      border-radius: 5px;
+      border: none;
+      color: white;
+      outline: none;
+    }
+  }
+}
+
+//JSでのイベント部分
+//アプリの説明部分を表示
+.descriptionBox.active {
+  z-index: 999;
+  opacity: 1;
+  pointer-events: auto;
+}
+//アプリの選択部分を表示
+.quizBox.active {
+  z-index: 999;
+  opacity: 1;
+  pointer-events: auto;
+}
+//クイズ選択部分の正解部分の色表示
+.listOption .option.ture {
+  background-color: rgb(100, 165, 1);
+  color: black;
+}
+
+//クイズ選択部分の不正解部分の色表示
+.listOption .option.false {
+  background-color: red;
+  color: black;
+}
+
+//クイズ選択肢を一度選択した後は、他の選択肢をクリックできなくする.
+.listOption .option.notouch {
+  pointer-events: none;
+}
+
+//クイズの結果を表示する部分
+.scoreBox.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 999;
+}
+
+//レスポンシブデザイン対応
+@media screen and (max-width: 620px) {
+  //スタートボタンの調整
+  .startButton button {
+    padding: 10px 15px;
+  }
+  //アプリの説明画面の調整
+  .descriptionBox {
+    width: 320px;
+  }
+  //選択問題の画面の調整
+  .quizBox {
+    width: 320px;
+
+    & section .quiz {
+      font-size: 40px;
+      text-align: center;
+    }
+  }
+  //スコア部分の画面の調整
+  .scoreBox {
+    width: 300px;
+    height: 300px;
+  }
+}
