@@ -1,0 +1,551 @@
+/*safariにcssスタイルを適用*/
+
+input,
+select {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
+/*---------------------/
+/         font         /
+/---------------------*/
+
+
+/*--local font-family inport--*/
+
+@font-face {
+    font-family: 'PMplusRr';
+    src: url(../font/PixelMplus12-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'PocketDegital';
+    src: url(../font/POCKC___.TTF);
+}
+
+
+/*--font setting--*/
+
+
+/*-timer font-*/
+
+input[id="tm"],
+input[id="tm2"],
+input[id="xc"] {
+    font-family: 'PocketDegital';
+}
+
+
+/*-module text font-*/
+
+input[id="counter"],
+input[id="anstxt2"],
+input[id="mo3tx1"],
+input[id="mo3tx2"] {
+    font-family: 'PmplusRr';
+}
+
+
+/*---------------------/
+/      全体の構成       /
+/---------------------*/
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    position: static;
+    background-image: url();
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+#body-style {
+    position: static;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    /*overflow: hidden;*/
+}
+
+input[name="btn2"],
+input[name="btn"] {
+    border: outset #b9a978;
+}
+
+input[type="button"]:hover {
+    opacity: 0.8;
+}
+
+
+/*---------------------/
+/    start/end 画面    /
+/---------------------*/
+
+.content {
+    position: fixed;
+    width: 80vw;
+    height: auto;
+    border: 1px #000 solid;
+    background-color: rgb(128, 128, 128, 0.9);
+    z-index: 9900;
+    margin: 5vh 10vw;
+}
+
+.strbtns-contents {
+    width: 100%;
+}
+
+.strbtns {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.strbtns-child {
+    text-align: center;
+}
+
+.strbtns-contents .strbtns-child:nth-child(1) {
+    width: 60vw;
+    height: 5vh;
+    margin: 5vh 10vw;
+    font-size: 4vh;
+}
+.strbtns-contents .strbtns-child:nth-child(2) {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 10%;
+}
+.strbtns-contents .strbtns-child:nth-child(3) {
+    width: 50vw;
+    height: 20vh;
+    margin: 10vh 15vw;
+}
+
+.strbtns-contents .strbtns-child:nth-child(4) {
+    width: 50vw;
+    height: 20vh;
+    margin: 10vh 15vw;
+}
+
+#strbtns-img{
+    position: fixed;
+    top: 10vmin;
+    width: 80vmin;
+    align-items: center;
+    border: #000 solid;
+    /*overflow: hidden;*/
+}
+
+.endfase-contents {
+    width: 100%;
+}
+
+.endfase-re-flex {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.endfase-re-child {
+    margin: auto;
+}
+
+.endfase-re-flex .endfase-re-child:nth-child(1) {
+    width: 60vw;
+    height: 10vh;
+    text-align: center;
+    font-size: 5vh;
+    margin: 10vh 10vw 5vh 10vw;
+}
+
+.endfase-re-flex .endfase-re-child:nth-child(2) {
+    width: 40vw;
+    height: 5vh;
+    margin: 0 20vw;
+}
+
+.endfase-re-flex .endfase-re-child:nth-child(3) {
+    width: 40vw;
+    height: 5vh;
+    margin: 0 20vw;
+}
+
+.endfase-re-flex .endfase-re-child:nth-child(4) {
+    width: 40vw;
+    height: 5vh;
+    margin: 0 auto 5vh auto;
+}
+
+.endfase-rebtn-flex {
+    position: relative;
+    display: flex;
+    margin: 0 20vw 5vh 5vw;
+    float: right;
+}
+/*---------------------/
+/        暗記表        /
+/---------------------*/
+.ankihyo-flex-top {
+    display: flex;
+}
+#ankihyo{
+    margin: 0 auto 5vh auto;
+}
+input[name="en"],input[name="jp"]{
+    width: 30vw;
+    height: 2vh;
+    font-weight: bold;
+}
+/*---------------------/
+/ モジュール全体の構成  /
+/---------------------*/
+
+#moduleObj {
+    margin-top: 5vh;
+}
+
+.obj-flex {
+    width: 66vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 15vw;
+    border: ridge 2vw #808080;
+    background-image: url(../images/diamond-plate.jpg);
+    /*https://www.psdgraphics.com/backgrounds/metal-diamond-plate-texture//*/
+    background-size: cover;
+}
+
+.contents-flex {
+    width: 100%;
+    display: flex;
+}
+
+.contents {
+    position: relative;
+    width: 30vw;
+    height: 30vw;
+    border: solid 0.5vw;
+    border-radius: 3%;
+    display: none;
+    background-image: url(../images/metal-doted.jpg);
+    /*http: //creativeloads.com/metal-doted-texture=579*/
+    /*url(../images/diamond-plate.jpg);
+    /*https://www.psdgraphics.com/backgrounds/metal-diamond-plate-texture//*/
+    /*background-size: cover;*/
+}
+
+.contents:nth-of-type(1) {
+    margin: 1vw;
+}
+
+.contents:nth-of-type(2) {
+    margin: 1vw;
+}
+
+
+/*---------------------/
+/      クリアランプ     /
+/---------------------*/
+
+.clearmodulepare,
+.clearmodulepare * {
+    box-sizing: border-box;
+}
+
+.clearmodulepare {
+    height: 7vw;
+    width: 7vw;
+    position: absolute;
+    right: -0.3vw;
+    top: -0.3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: #000 solid 0.1vw;
+    border-radius: 0 0 0 50%;
+    background-image: url(../images/diamond-plate.jpg);
+    /*https://www.psdgraphics.com/backgrounds/metal-diamond-plate-texture//*/
+    background-size: cover;
+}
+
+.clearmodule {
+    position: absolute;
+    display: block;
+    border-radius: 100%;
+    border: 1px solid;
+    width: 5vw;
+    height: 5vw;
+    background-color: #8b8b8b;
+}
+
+.clearmodulechi {
+    position: absolute;
+    display: block;
+    border-radius: 100%;
+    border: 1px #000 solid;
+    background: transparent radial-gradient(#808080, #000);
+    width: 3.5vw;
+    height: 3.5vw;
+}
+
+
+/*---------------------/
+/   タイマーモジュール  /
+/---------------------*/
+
+#frset {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+#frset #tm {
+    width: 25vw;
+    height: 10vw;
+    padding: 2px;
+    margin: 25% auto 5% auto;
+    background-color: #202020;
+    border-radius: 2px;
+    text-align: left;
+    font-size: 12.85vw;
+    color: #ff0a0a;
+}
+
+#frset #xc {
+    width: 22vw;
+    height: 6vw;
+    padding: 2px;
+    margin: auto;
+    background-color: #202020;
+    text-align: left;
+    font-size: 10.26vw;
+    color: #ff0a0a;
+}
+
+
+/*---------------------/
+/     モジュール1      /
+/---------------------*/
+
+#1module1 {
+    position: relative;
+}
+
+.module1-flex {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.module1-flex #counter {
+    width: 25vw;
+    height: 20%;
+    margin: 25% auto 10% auto;
+    font-size: 2vw;
+    word-break: break-all;
+}
+
+.module1-flex .module1-btn-flex-group {
+    margin: 0 10%;
+}
+
+.module1-flex .module1-btn-flex {
+    width: 100%;
+    display: flex;
+    margin: 5% auto 5% auto;
+    justify-content: flex-start;
+}
+
+.module1-flex input[name="btn"] {
+    flex-grow: 1;
+    margin: 5px;
+    width: 10vw;
+    height: 5vw;
+    font-size: 1.5vw;
+    background-color: #f7e2a0;
+}
+
+
+/*---------------------/
+/     モジュール2      /
+/---------------------*/
+
+#2module2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.module2-flex {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.module2-flex #anstxt2 {
+    width: 25vw;
+    height: 20%;
+    margin: 25% auto 5% auto;
+    font-size: 2vw;
+}
+
+.module2-flex .module2-btn-flex-group {
+    margin: 0 10%;
+}
+
+.module2-btn-flex-group .module2-btn2-flex {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.module2-btn-flex-group input[name="btn2"] {
+    flex-grow: 1;
+    margin: 2px;
+    width: 4vw;
+    height: 3vw;
+    font-size: 1.5vw;
+}
+
+
+/*---------------------/
+/     モジュール3      /
+/---------------------*/
+
+#3module3 {
+    position: relative;
+}
+
+.module3-flex {
+    position: absolute;
+    top: 5vw;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 25vw;
+}
+
+.module3-txt-flex {
+    display: flex;
+    margin: 1vw auto;
+}
+
+.module3-txt-flex:nth-of-type(1) {
+    margin-left: 5.6vw;
+}
+
+.module3-txt-flex:nth-of-type(2) {
+    margin-left: 3vw;
+}
+
+.module3-txt-flex:nth-of-type(3) {
+    margin-left: 3vw;
+}
+
+.module3-txt-flex:nth-of-type(4) {
+    margin-left: 3vw;
+}
+
+.module3arrow {
+    width: 0;
+    height: 0;
+    margin: auto;
+    border-top: 1.5vw solid transparent;
+    border-bottom: 1.5vw solid transparent;
+}
+
+div[name="bluearrow"] {
+    border-left: 2.6vw solid #6aa7cd;
+}
+
+div[name="greenarrow"] {
+    border-left: 2.6vw solid #34c239;
+}
+
+div[name="redarrow"] {
+    float: right;
+    border-left: 2.6vw solid #c24934;
+}
+
+input[id="mo3tx1"],
+input[id="mo3tx2"] {
+    margin: auto 0.5vw;
+    width: 18vw;
+    height: 3vw;
+    font-size: 1.5vw;
+}
+
+select[id="select1"],
+select[id="select2"] {
+    margin: auto 0.5vw;
+    width: 19vw;
+    height: 4vw;
+    font-size: 1.5vw;
+}
+
+
+/*---------------------/
+/    スクロールバー     /
+/---------------------*/
+
+
+/* スクロールの幅の設定 */
+
+html::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: #808080;
+}
+
+
+/* スクロールの背景の設定 */
+
+html::-webkit-scrollbar-track {
+    border-radius: 15px;
+    box-shadow: 0 0 4px #000;
+}
+
+
+/* スクロールのつまみ部分の設定 */
+
+html::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+    background: #b22222;
+}
+
+
+/*---------------------/
+/                  /
+/---------------------*/
+
+
+/*disable*/
+
+:disabled {
+    background-color: #8f825b;
+    border: inset;
+}
+
+
+/*---------------------/
+/                  /
+/---------------------*/

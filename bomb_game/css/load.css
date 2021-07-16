@@ -1,0 +1,325 @@
+/*----ロード画面----*/
+@font-face {
+    font-family: 'azuki';
+    src: url(../font/azuki.ttf);
+}
+
+/* Loading Block */
+#loading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #808080;
+    top: 0;
+    left: 0;
+    z-index: 9990;
+}
+
+#loading span {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    margin: 60vh 0;
+
+}
+
+#loading a {
+    font-family: 'azuki';
+    font-size: 40px;
+    animation: textblor 2s linear infinite;
+}
+
+/*animation*/
+.bombnring-print,
+.bombnring-print * {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    position: absolute;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.bombnring-print {
+    height: 100%;
+    width: auto;
+    padding: 2px;
+    overflow: hidden;
+    position: absolute;
+    animation: bombnring-print-animation 2.5s linear infinite forwards;
+}
+
+.bombnring-print .bombnring {
+    position: absolute;
+}
+
+.bombnring-print .bombnring:nth-child(1) {
+    width: 212px;
+    height: 100px;
+    transform: scale(0.3)rotate(30deg)translate(110px, -160px);
+    background-color: #808080;
+}
+
+.bombnring-print .bombnring:nth-child(1)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    border: 10px solid;
+    border-bottom: 10px solid #808080;
+    border-left: 10px solid #808080;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    background-color: #808080;
+}
+
+.bombnring-print .bombnring:nth-child(1)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    border: 10px solid;
+    left: auto;
+    right: 0;
+    height: 60px;
+    border-radius: 0 50px 50px 0;
+    border-top: 10px hidden;
+    border-left: 10px hidden;
+    transform: rotate(45deg)translate(-50px, 35px);
+    z-index: 9999;
+    background-color: #808080;
+}
+
+.bombnring-print .bombnring:nth-child(2) {
+    width: 88.4px;
+    height: 88.4px;
+    margin: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    border-radius: 100%;
+    border: 2px solid;
+    background-image: linear-gradient(to top, #b22222 50%, #808080 50%);
+    background-size: 200% 200%;
+    animation: bgcolor 5s forwards;
+}
+
+.bombnring-print .bombnring:nth-child(2)::after {
+    content: "";
+    position: absolute;
+    width: 36.4px;
+    height: 13.52px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    border: 2px solid;
+    border-radius: 20%;
+    border-bottom: transparent;
+    background-color: #808080;
+    transform: translate(48px, -2px)rotate(35deg);
+    background-image: linear-gradient(-35deg, #b22222 50%, #808080 50%);
+    background-size: 243% 654%;
+    animation: bgcolor 7500ms forwards;
+    animation-delay: 50ms;
+}
+
+@keyframes bgcolor {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 100%;
+    }
+}
+
+@keyframes textblor {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes bombnring-print-animation {
+    0% {
+        transform: translate(0px, 0px)
+    }
+
+    2% {
+        transform: translate(2px, 0px)
+    }
+
+    4% {
+        transform: translate(0px, 0px)
+    }
+
+    6% {
+        transform: translate(2px, 0px)
+    }
+
+    8% {
+        transform: translate(0px, 0px)
+    }
+
+    12% {
+        transform: translate(3px, 0px)
+    }
+
+    14% {
+        transform: translate(0px, 0px)
+    }
+
+    16% {
+        transform: translate(3px, 0px)
+    }
+
+    18% {
+        transform: translate(0px, 0px)
+    }
+
+    22% {
+        transform: translate(4px, 0px)
+    }
+
+    24% {
+        transform: translate(0px, 0px)
+    }
+
+    26% {
+        transform: translate(4px, 0px)
+    }
+
+    28% {
+        transform: translate(0px, 0px)
+    }
+
+    32% {
+        transform: translate(5px, 0px)
+    }
+
+    34% {
+        transform: translate(0px, 0px)
+    }
+
+    36% {
+        transform: translate(5px, 0px)
+    }
+
+    38% {
+        transform: translate(0px, 0px)
+    }
+
+    42% {
+        transform: translate(6px, 0px)
+    }
+
+    44% {
+        transform: translate(0px, 0px)
+    }
+
+    46% {
+        transform: translate(6px, 0px)
+    }
+
+    48% {
+        transform: translate(0px, 0px)
+    }
+
+    52% {
+        transform: translate(7px, 0px)
+    }
+
+    54% {
+        transform: translate(0px, 0px)
+    }
+
+    56% {
+        transform: translate(7px, 0px)
+    }
+
+    58% {
+        transform: translate(0px, 0px)
+    }
+
+    62% {
+        transform: translate(6px, 0px)
+    }
+
+    64% {
+        transform: translate(0px, 0px)
+    }
+
+    66% {
+        transform: translate(6px, 0px)
+    }
+
+    68% {
+        transform: translate(0px, 0px)
+    }
+
+    72% {
+        transform: translate(5px, 0px)
+    }
+
+    74% {
+        transform: translate(0px, 0px)
+    }
+
+    76% {
+        transform: translate(5px, 0px)
+    }
+
+    78% {
+        transform: translate(0px, 0px)
+    }
+
+    82% {
+        transform: translate(4px, 0px)
+    }
+
+    84% {
+        transform: translate(0px, 0px)
+    }
+
+    86% {
+        transform: translate(4px, 0px)
+    }
+
+    88% {
+        transform: translate(0px, 0px)
+    }
+
+    92% {
+        transform: translate(3px, 0px)
+    }
+
+    94% {
+        transform: translate(0px, 0px)
+    }
+
+    96% {
+        transform: translate(3px, 0px)
+    }
+
+    98% {
+        transform: translate(0px, 0px)
+    }
+
+    100% {
+        transform: translate(0px, 0px)
+    }
+}

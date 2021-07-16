@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>開発中トップページ</title>
+</head>
+<body>
+    <script src="script/bombdate.js"></script>
+    <div style="position:fixed;width: 100%;height: 40vh; background-color: white; margin: 0;">
+        <a>ゲーム：</a>
+        <input type="button" value="爆弾解除ゲーム" onclick="location.href='bomb.html'"><br>
+        <p>※開発中</p>
+        <div>
+            <p>音声テスト (以下のテキストボックスに読んでほしい単語を入力→speech testを押す)</p>
+            <p style="font-size: 12px;">※下の表を押すとテキストボックスに自動入力されます</p>
+            <p style="font-size: 12px;">現在、再生にラグがあるため、対策を考え中</p>
+            <input type="text" id="sptest" value="test">
+            <input type="button" value="speech test" onclick="speechtest();">
+        </div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1W-diHK96v6_oN5uSaGUMIGv_MgqU3eWWfHwN8e54Gr0gbQ/viewform?usp=sf_link">アンケート</a>
+        <p>単語数：<a id="dateNum"></a>個</p>
+            <a href="https://englishlevelup.net/toeic-word-list/">参考サイト</a>
+    </div>
+    <table id="tbl" style="position:absolute;margin-top: 41vh;z-index: -1;"></table>
+    <script>
+        var datelen=dateEn.length;
+        document.getElementById("dateNum").innerText=datelen;
+        for (var i = 0; i < datelen/2; i++) {
+            var tr=document.createElement("tr");
+            tbl.appendChild(tr);
+            var cellText;
+            for(var j=0;j<4;j++){
+                var td = document.createElement("td");
+                var txt;
+                switch(j){
+                    case 0:
+                        txt=dateEn[i];
+                        break;
+                    case 1:
+                        txt=dateJp[i];
+                        break;
+                    case 2:
+                        txt=dateEn[i+datelen/2];
+                        break;
+                    case 3:
+                        txt=dateJp[i+datelen/2];
+                        break;
+                }
+                cellText = document.createTextNode(txt);
+                td.appendChild(cellText);
+                tr.appendChild(td);
+            }
+            tbl.setAttribute("border", "2");
+        }
+        for (let x = 0; x < datelen/2; x++) {
+            for (let y = 0; y < 4; y++) {
+                var oseta = tbl.rows[x].cells[y];
+                oseta.onclick = function() {
+                    clicktext(this.innerHTML);
+                }
+            }
+        }
+        function clicktext(str){
+            document.getElementById("sptest").value=str;
+        }
+        function speechtest(){
+            const uttr = new SpeechSynthesisUtterance();
+            uttr.text=document.getElementById("sptest").value;
+            var voice = speechSynthesis.getVoices().find(function(voice){
+                return voice.name === 'Google UK English Male';
+            });
+            var name= speechSynthesis.getVoices().find(function(voice){
+                return voice.name === 'Alex';
+            });
+            if(voice){uttr.voice=voice;}else if(name){uttr.voice=name;}else{uttr.lang="en-US";}
+            speechSynthesis.speak(uttr);
+        }
+    </script>
+</body>
+</html>
