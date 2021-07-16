@@ -1,0 +1,40 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="kensaku.css">
+  <link rel="stylesheet" href="jquery-ui.css">
+  <script src="jquery.js"></script>
+  <script src="jquery-ui.js"></script>
+  <title>検索</title>
+</head>
+
+<body>
+<div id="SearchBox" class="search-bg">
+  <div class="search-wrp">
+    <form class="search" method="GET" action="#" onsubmit="return func1()">
+      <label for="SearchTxt" class="hide-label">検索</label>
+      <div class="search-input">
+        <input id="SearchTxt" type="search" name="search_txt" class="search-txt" placeholder="英単語を検索">
+        <button type="reset" name="search_del" class="search-del icon-del">削除する</button>
+        <button type="submit" name="search_exe" class="search-exe">
+          <div class="icon-search search-exe-icon"></div>
+          検索する
+        </button>
+        <!--トップページへ戻るボタン-->
+        <button type="reset" name="page-out" class="search-del icon-rem" onclick='location.href="../index.html"'>
+        </button>
+      </div>
+    </form>
+
+    <p class="text-flex"><output name="result1" id="output1"></output><input type="button" id="arrow" onclick="EnglishAudio();" style="display: none;"value="▶"></input></p>
+    <p><output name="result2" id="output2"></output></p>
+    <p><output name="result3" id="output3"></output></p>
+
+  </div>
+</div>
+
+<script type="text/javascript" src="japanese.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+</body>
+</html>
