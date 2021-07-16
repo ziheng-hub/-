@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+
+body {
+  overflow: hidden;
+  & section {
+    //position
+    position: relative;
+    z-index: 10;
+
+    //width,height
+    width: 100%;
+    min-height: 100vh;
+
+    //padding,margin
+    padding: 100px;
+
+    //display
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #000;
+
+    & > span {
+      //border
+      border-radius: 50%;
+      //position
+      position: absolute;
+      z-index: -1;
+      //animation
+      animation-name: container_animation;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+      //none
+      pointer-events: none;
+      //clip
+      clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+      );
+    }
+  }
+  @keyframes container_animation {
+    from {
+      transform: translateY(0) scale(0);
+    }
+    20% {
+      opacity: 1;
+    }
+
+    80% {
+      opacity: 1;
+    }
+
+    to {
+      transform: translateY(300%) scale(1) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  & ul {
+    padding: 0;
+    list-style: none;
+
+    & li {
+      width: 35em;
+      height: 3em;
+      font-size: 20px;
+      border-radius: 0.5em;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: bold;
+      line-height: 3em;
+      transition: 0.3s;
+      cursor: pointer;
+      box-shadow: 0 0 1em #00000000;
+      margin: 10px;
+      padding-left: 5%;
+      transition: all 1.2s ease;
+
+      & a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+      }
+
+      &:nth-child(odd) {
+        background: linear-gradient(to right, blue, black);
+      }
+      &:nth-child(even) {
+        background: linear-gradient(to right, rgb(255, 230, 2), black);
+      }
+
+      &:hover {
+        background: linear-gradient(to right, rgb(255, 17, 0), black);
+      }
+    }
+  }
+}
