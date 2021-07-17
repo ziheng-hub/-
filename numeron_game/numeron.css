@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  border-color: white;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(0deg, black, gray);
+}
+
+footer {
+  position: absolute;
+  bottom: 10px;
+}
+
+.inputBox .button {
+  color: white;
+  background: black;
+}

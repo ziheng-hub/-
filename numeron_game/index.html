@@ -1,0 +1,280 @@
+<!-- 参考サイト: http://park1.wakwak.com/~stainless/game1.html, https://poland-it-blog.com/eng_numeron/-->
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>隠された4文字の英単語を当てるゲーム</title>
+    <link rel="stylesheet" href="numeron.css" />
+  </head>
+  <body onload="wordset()">
+    <table border="0">
+      <tbody>
+        <tr>
+          <td valign="top" colspan="3" align="center">
+            <font size="5" color="red"
+              ><i><b>◆隠された4文字の英単語を当てるゲーム◆</b></i></font
+            >
+          </td>
+        </tr>
+        <tr>
+          <td valign="top" rowspan="2">
+            <table border="1">
+              <tbody>
+                <tr>
+                  <td colspan="4">正解は<span id="D00">****</span></td>
+                </tr>
+                <tr>
+                  <td nowrap="">回数</td>
+                  <td nowrap="">入力した文字</td>
+                  <td nowrap="">場所も文字も当り</td>
+                  <td nowrap="">文字だけ当り</td>
+                </tr>
+                <tr>
+                  <td align="right">1</td>
+                  <td align="right">
+                    <span id="D01"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="E01"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="F01"><br /></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="right">2</td>
+                  <td align="right">
+                    <span id="D02"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="E02"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="F02"><br /></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="right">3</td>
+                  <td align="right">
+                    <span id="D03"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="E03"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="F03"><br /></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="right">4</td>
+                  <td align="right">
+                    <span id="D04"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="E04"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="F04"><br /></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="right">5</td>
+                  <td align="right">
+                    <span id="D05"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="E05"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="F05"><br /></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="right">6</td>
+                  <td align="right">
+                    <span id="D06"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="E06"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="F06"><br /></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="right">7</td>
+                  <td align="right">
+                    <span id="D07"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="E07"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="F07"><br /></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="right">8</td>
+                  <td align="right">
+                    <span id="D08"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="E08"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="F08"><br /></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="right">9</td>
+                  <td align="right">
+                    <span id="D09"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="E09"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="F09"><br /></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="right">10</td>
+                  <td align="right">
+                    <span id="D10"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="E10"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="F10"><br /></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="right">11</td>
+                  <td align="right">
+                    <span id="D11"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="E11"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="F11"><br /></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="right">12</td>
+                  <td align="right">
+                    <span id="D12"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="E12"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="F12"><br /></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="right">13</td>
+                  <td align="right">
+                    <span id="D13"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="E13"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="F13"><br /></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="right">14</td>
+                  <td align="right">
+                    <span id="D14"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="E14"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="F14"><br /></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="right">15</td>
+                  <td align="right">
+                    <span id="D15"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="E15"><br /></span>
+                  </td>
+                  <td align="right">
+                    <span id="F15"><br /></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <br /><br />
+          </td>
+
+          <td valign="top" rowspan="2" width="20"><br /></td>
+
+          <td valign="top">
+            <font size="4" color="blue"
+              ><i><b>◇単語入力◇</b></i></font
+            ><br />
+            <div class="inputBox">
+              <form name="Form1" method="POST">
+                　　<input name="Text1" size="5" maxlength="4" />
+                <input
+                  type="button"
+                  class="button"
+                  value=" 判定 "
+                  onclick="func();"
+                />
+                <input
+                  type="button"
+                  value=" リセット "
+                  class="button"
+                  onclick="location.reload(true);"
+                />
+              </form>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">
+            <font size="4" color="green"
+              ><i><b>◇ルール◇</b></i></font
+            ><br />
+            隠された4文字の英単語は、同じアルファベットが2つ以上含まれることはありません<br />
+            例:(f<font color="red">oo</font>d, ba<font color="red">ll</font>,
+            <font color="red">a</font>re<font color="red">a</font>
+            などは出題されません)<br />
+            入力する単語も、同じアルファベットが2つ以上含んではいけません<br /><br />
+            入力した単語のアルファベットの位置と、<br />隠された単語のアルファベットの位置が一致していれば、<br />
+            「場所も文字も当り」にその個数が表示されます<br /><br />
+            入力した単語の中に、位置は異なるが、隠された単語に含まれるアルファベットがあれば、<br />
+            「文字だけ当り」にその個数が表示されます<br /><br />
+            15回以内に正解しないとゲームオーバーとなります<br /><br />
+            入力する単語は半角、小文字を入力してください<br /><br />
+            単語を入力してEnterキーを押すと、<br />
+            画面が更新されて始めからになってしまうのでご注意下さい<br /><br />
+            ブラウザの更新ボタンか、リセットボタンを押すとゲームがリセットされます<br /><br />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script src="main.js"></script>
+    <script src="setword.js"></script>
+    <footer>
+      <div class="inputBox">
+        <input
+          type="button"
+          class="button"
+          onclick="location.href='../index.html'"
+          value="TOPに戻る"
+        />
+      </div>
+    </footer>
+  </body>
+</html>
