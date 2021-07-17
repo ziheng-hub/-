@@ -1,0 +1,366 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  color: white;
+}
+
+body section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #111;
+}
+
+body #field {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 160px 10px 160px 10px 160px;
+  grid-template-rows: 160px 10px 160px 10px 160px;
+  -ms-grid-columns: 120px 10px 120px 10px 120px 10px 120px 10px 120px 10px 120px
+    10px 120px 10px 120px;
+  grid-template-columns: 120px 10px 120px 10px 120px 10px 120px 10px 120px 10px 120px 10px 120px 10px 120px;
+  grid-template-areas: "box1 ... box2 ... box3 ... box4 ... box5 ... box6 ... box7 ... box8" "... ... ... ... ... ... ... ... ... ... ... ... ... ... ..." "box9 ... box10 ... box11 ... box12 ... box13 ... box14 ... box15 ... box16" "... ... ... ... ... ... ... ... ... ... ... ... ... ... ..." "box17 ... box18 ... box19 ... box20 ... box21 ... box22 ... box23 ... box24";
+  justify-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+body #field .card {
+  position: relative;
+  width: 120px;
+  height: 160px;
+  color: #fff;
+  background: #111;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 5px;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+body #field .card:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: box1;
+}
+
+body #field .card:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: box2;
+}
+
+body #field .card:nth-child(3) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  grid-area: box3;
+}
+
+body #field .card:nth-child(4) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 7;
+  grid-area: box4;
+}
+
+body #field .card:nth-child(5) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 9;
+  grid-area: box5;
+}
+
+body #field .card:nth-child(6) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 11;
+  grid-area: box6;
+}
+
+body #field .card:nth-child(7) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 13;
+  grid-area: box7;
+}
+
+body #field .card:nth-child(8) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 15;
+  grid-area: box8;
+}
+
+body #field .card:nth-child(9) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: box9;
+}
+
+body #field .card:nth-child(10) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: box10;
+}
+
+body #field .card:nth-child(11) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 5;
+  grid-area: box11;
+}
+
+body #field .card:nth-child(12) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 7;
+  grid-area: box12;
+}
+
+body #field .card:nth-child(13) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 9;
+  grid-area: box13;
+}
+
+body #field .card:nth-child(14) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 11;
+  grid-area: box14;
+}
+
+body #field .card:nth-child(15) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 13;
+  grid-area: box15;
+}
+
+body #field .card:nth-child(16) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 15;
+  grid-area: box16;
+}
+
+body #field .card:nth-child(17) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: box17;
+}
+
+body #field .card:nth-child(18) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+  grid-area: box18;
+}
+
+body #field .card:nth-child(19) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 5;
+  grid-area: box19;
+}
+
+body #field .card:nth-child(20) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 7;
+  grid-area: box20;
+}
+
+body #field .card:nth-child(21) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 9;
+  grid-area: box21;
+}
+
+body #field .card:nth-child(22) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 11;
+  grid-area: box22;
+}
+
+body #field .card:nth-child(23) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 13;
+  grid-area: box23;
+}
+
+body #field .card:nth-child(24) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 15;
+  grid-area: box24;
+}
+
+body #field .card:hover {
+  -webkit-transform: translateY(-20px);
+  transform: translateY(-20px);
+}
+
+body #field .card span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  font-size: 1.6em;
+}
+
+body #field .card span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+body #field .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, skyblue, #fbff00);
+}
+
+body #field .card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, skyblue, #fbff00);
+  -webkit-filter: blur(20px);
+  filter: blur(20px);
+  z-index: -1;
+}
+
+header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 40px 20px;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 3em;
+  font-weight: bold;
+  color: transparent;
+  -webkit-text-stroke: 0.15vw white;
+}
+
+/********修正箇所 クリア後の文字を少し変更********/
+#clear {
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 50px;
+}
+
+#setumei {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  padding: 20px;
+  border: black solid 1px;
+  margin-top: 20px;
+  font-size: 1.5em;
+  /********修正箇所 文字色変更********/
+  color: white;
+  display: none;
+}
+/*# sourceMappingURL=cardgame.css.map */
+
+/********修正箇所 リスタートボタン・戻るボタン　追加********/
+ul {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  list-style: none;
+}
+
+#restart {
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 8px 20px;
+  font-size: 18px;
+  background-color: #292929f3;
+}
+
+#return {
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 8px 20px;
+  font-size: 18px;
+  margin-left: 20px;
+  display: inline-block;
+  background-color: #292929f3;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 30%;
+}
+footer div {
+  padding: 10px;
+  border: 1px solid rgb(255, 238, 1);
+  margin-left: 20px;
+}
+
+footer div a {
+  color: rgb(255, 255, 255);
+  font-size: 1.5em;
+  text-decoration: none;
+}
