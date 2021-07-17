@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+body section {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #000;
+}
+
+body section > span {
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+  -webkit-animation-name: container_animation;
+          animation-name: container_animation;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  pointer-events: none;
+  -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+          clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+body section > span#cricle {
+  -webkit-animation-name: container_animation02;
+          animation-name: container_animation02;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes container_animation {
+  from {
+    -webkit-transform: translateY(0) scale(0);
+            transform: translateY(0) scale(0);
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(300%) scale(1) rotate(360deg);
+            transform: translateY(300%) scale(1) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes container_animation {
+  from {
+    -webkit-transform: translateY(0) scale(0);
+            transform: translateY(0) scale(0);
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(300%) scale(1) rotate(360deg);
+            transform: translateY(300%) scale(1) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes container_animation02 {
+  from {
+    -webkit-transform: translateY(0) scale(0) rotate(0deg);
+            transform: translateY(0) scale(0) rotate(0deg);
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(300%) scale(1.2) rotate(360deg);
+            transform: translateY(300%) scale(1.2) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes container_animation02 {
+  from {
+    -webkit-transform: translateY(0) scale(0) rotate(0deg);
+            transform: translateY(0) scale(0) rotate(0deg);
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(300%) scale(1.2) rotate(360deg);
+            transform: translateY(300%) scale(1.2) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+body ul {
+  padding: 0;
+  list-style: none;
+}
+
+body ul li {
+  width: 35em;
+  height: 3em;
+  font-size: 20px;
+  border-radius: 0.5em;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 3em;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 1em #00000000;
+          box-shadow: 0 0 1em #00000000;
+  margin: 10px;
+  padding-left: 5%;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+body ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+body ul li:nth-child(odd) {
+  background: -webkit-gradient(linear, left top, right top, from(blue), to(black));
+  background: linear-gradient(to right, blue, black);
+}
+
+body ul li:nth-child(even) {
+  background: -webkit-gradient(linear, left top, right top, from(#ffe602), to(black));
+  background: linear-gradient(to right, #ffe602, black);
+}
+
+body ul li:hover {
+  background: -webkit-gradient(linear, left top, right top, from(#ff1100), to(black));
+  background: linear-gradient(to right, #ff1100, black);
+  -webkit-transform: translateX(-20%);
+          transform: translateX(-20%);
+}
+/*# sourceMappingURL=style.css.map */
