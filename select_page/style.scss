@@ -114,7 +114,7 @@ body {
       box-shadow: 0 0 1em #00000000;
       margin: 10px;
       padding-left: 5%;
-      transition: all 1.2s ease;
+      transition: all 1s ease;
 
       & a {
         color: rgb(255, 255, 255);
@@ -130,6 +130,7 @@ body {
 
       &:hover {
         background: linear-gradient(to right, rgb(255, 17, 0), black);
+        transform: translateX(-20%);
       }
     }
   }
