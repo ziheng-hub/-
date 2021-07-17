@@ -149,8 +149,8 @@ body ul li {
           box-shadow: 0 0 1em #00000000;
   margin: 10px;
   padding-left: 5%;
-  -webkit-transition: all 1.2s ease;
-  transition: all 1.2s ease;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 body ul li a {
@@ -171,5 +171,7 @@ body ul li:nth-child(even) {
 body ul li:hover {
   background: -webkit-gradient(linear, left top, right top, from(#ff1100), to(black));
   background: linear-gradient(to right, #ff1100, black);
+  -webkit-transform: translateX(-20%);
+          transform: translateX(-20%);
 }
 /*# sourceMappingURL=style.css.map */
